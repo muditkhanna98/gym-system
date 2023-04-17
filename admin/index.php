@@ -168,29 +168,6 @@ $result5 = mysqli_query($con, $qry);
 
   </script>
 
-  <script type="text/javascript">
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Gender', 'Number'],
-        <?php
-        while ($row = mysqli_fetch_array($result3)) {
-          echo "['" . $row["gender"] . "', " . $row["enumber"] . "],";
-        }
-        ?>
-      ]);
-
-      var options = {
-
-        pieHole: 0.4,
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-      chart.draw(data, options);
-    }
-  </script>
-
   <script>
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawChart);
@@ -264,13 +241,6 @@ $result5 = mysqli_query($con, $qry);
                 <?php include 'actions/count-announcements.php' ?>
               </span>Announcements </a> </li>
 
-
-          <!-- <li class="bg_ls span2"> <a href="buttons.html"> <i class="fas fa-tint"></i> Buttons</a> </li>
-        <li class="bg_ly span3"> <a href="form-common.html"> <i class="fas fa-th-list"></i> Forms</a> </li>
-        <li class="bg_lb span2"> <a href="interface.html"> <i class="fas fa-pencil"></i>Elements</a> </li> -->
-          <!-- <li class="bg_lg"> <a href="calendar.html"> <i class="fas fa-calendar"></i> Calendar</a> </li>
-        <li class="bg_lr"> <a href="error404.html"> <i class="fas fa-info-sign"></i> Error</a> </li> -->
-
         </ul>
       </div>
       <!--End-Action boxes-->
@@ -312,60 +282,8 @@ $result5 = mysqli_query($con, $qry);
             </div>
           </div>
         </div>
-      </div><!-- End of row-fluid -->
-
-      <div class="row-fluid">
-        <div class="widget-box">
-          <div class="widget-title bg_lg"><span class="icon"><i class="fas fa-file"></i></span>
-            <h5>Earnings & Expenses Reports</h5>
-          </div>
-          <div class="widget-content">
-            <div class="row-fluid">
-              <div class="span12">
-                <!-- <div id="piechart"></div>   -->
-                <div id="top_y_div" style="width: 700px; height: 180px;"></div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div><!-- End of row-fluid -->
-
-      <div class="row-fluid">
-        <div class="span6">
-          <div class="widget-box">
-            <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i
-                  class="fas fa-chevron-down"></i></span>
-              <h5>Registered Gym Members by Gender: Overview</h5>
-            </div>
-            <div class="widget-content nopadding collapse in" id="collapseG2">
-              <ul class="recent-posts">
-
-                <div id="donutchart" style="width: 600px; height: 300px;"></div>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="span6">
-          <div class="widget-box">
-            <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i
-                  class="fas fa-chevron-down"></i></span>
-              <h5>Staff Members by Designation: Overview</h5>
-            </div>
-            <div class="widget-content nopadding collapse in" id="collapseG2">
-              <ul class="recent-posts">
-
-                <div id="donutchart2022" style="width: 600px; height: 300px;"></div>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!--End-Chart-box-->
-      <!-- <hr/> -->
       <div class="row-fluid">
         <div class="span6">
           <div class="widget-box">
@@ -400,72 +318,11 @@ $result5 = mysqli_query($con, $qry);
               </ul>
             </div>
           </div>
-
-
         </div>
-        <div class="span6">
-
-          <div class="widget-box">
-            <div class="widget-title"> <span class="icon"><i class="fas fa-tasks"></i></span>
-              <h5>Customer's To-Do Lists</h5>
-            </div>
-            <div class="widget-content">
-              <div class="todo">
-                <ul>
-                  <?php
-
-                  include "dbcon.php";
-                  $qry = "SELECT * FROM todo";
-                  $result = mysqli_query($con, $qry);
-
-                  while ($row = mysqli_fetch_array($result)) { ?>
-
-                    <li class='clearfix'>
-
-                      <div class='txt'>
-                        <?php echo $row["task_desc"] ?>
-                        <?php if ($row["task_status"] == "Pending") {
-                          echo '<span class="by label label-info">Pending</span>';
-                        } else {
-                          echo '<span class="by label label-success">In Progress</span>';
-                        } ?>
-                      </div>
-
-                    <?php }
-                  echo "</li>";
-                  echo "</ul>";
-                  ?>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div> <!-- End of ToDo List Bar -->
     </div><!-- End of Announcement Bar -->
   </div><!-- End of container-fluid -->
   </div><!-- End of content-ID -->
-
-  <!--end-main-container-part-->
-
-  <!--Footer-part-->
-
-
-
-  <style>
-    #footer {
-      color: white;
-    }
-
-    #piechart {
-      width: 800px;
-      height: 280px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-
-  <!--end-Footer-part-->
 
   <script src="../js/excanvas.min.js"></script>
   <script src="../js/jquery.min.js"></script>
@@ -478,7 +335,6 @@ $result5 = mysqli_query($con, $qry);
   <script src="../js/matrix.js"></script>
   <script src="../js/matrix.dashboard.js"></script>
   <script src="../js/jquery.gritter.min.js"></script>
-  <!-- <script src="../js/matrix.interface.js"></script>  -->
   <script src="../js/matrix.chat.js"></script>
   <script src="../js/jquery.validate.js"></script>
   <script src="../js/matrix.form_validation.js"></script>
@@ -493,10 +349,8 @@ $result5 = mysqli_query($con, $qry);
     // This function is called from the pop-up menus to transfer to
     // a different page. Ignore if the value returned is a null string:
     function goPage(newURL) {
-
       // if url is empty, skip the menu dividers and reset the menu selection to default
       if (newURL != "") {
-
         // if url is "-", it is this page -- reset the menu:
         if (newURL == "-") {
           resetMenu();
