@@ -77,13 +77,6 @@ include('dbcon.php'); ?>
                 <h6>Customer Login</h6>
             </a>
         </div>
-
-        <div class="pull-right">
-            <a href="staff/index.php">
-                <h6>Staff Login</h6>
-            </a>
-        </div>
-
     </div>
 
     <script src="js/jquery.min.js"></script>

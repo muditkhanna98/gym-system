@@ -30,166 +30,6 @@ $result5 = mysqli_query($con, $qry);
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-
-
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Services', 'Number'],
-        <?php
-        while ($row = mysqli_fetch_array($result)) {
-          echo "['" . $row["services"] . "', " . $row["number"] . "],";
-        }
-        ?>
-      ]);
-      var options = {
-        //is3D:true,  
-        pieHole: 0.4,
-
-      };
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-      chart.draw(data, options);
-    }  
-  </script>
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['bar'] });
-    google.charts.setOnLoadCallback(drawStuff);
-
-    function drawStuff() {
-      var data = new google.visualization.arrayToDataTable([
-        ['Services', 'Total Numbers'],
-        // ["King's pawn (e4)", 44],
-        // ["Queen's pawn (d4)", 31],
-        // ["Knight to King 3 (Nf3)", 12],
-        // ["Queen's bishop pawn (c4)", 10],
-        // ['Other', 3]
-
-        <?php
-        $query = "SELECT services, count(*) as number FROM members GROUP BY services";
-        $res = mysqli_query($con, $query);
-        while ($data = mysqli_fetch_array($res)) {
-          $services = $data['services'];
-          $number = $data['number'];
-          ?>
-          ['<?php echo $services; ?>', <?php echo $number; ?>],
-          <?php
-        }
-        ?>
-
-
-      ]);
-
-      var options = {
-        // title: 'Chess opening moves',
-        width: 710,
-        legend: { position: 'none' },
-        // chart: { title: 'Chess opening moves',
-        //          subtitle: 'popularity by percentage' },
-        bars: 'vertical', // Required for Material Bar Charts.
-        axes: {
-          x: {
-            0: { side: 'top', label: 'Total' } // Top x-axis.
-          }
-        },
-        bar: { groupWidth: "100%" }
-      };
-
-      var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-      chart.draw(data, options);
-    };
-
-
-
-  </script>
-
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['bar'] });
-    google.charts.setOnLoadCallback(drawStuff);
-
-    function drawStuff() {
-      var data = new google.visualization.arrayToDataTable([
-        ['Terms', 'Total Amount',],
-
-        <?php
-        $query1 = "SELECT gender, SUM(amount) as numberone FROM members; ";
-
-        $rezz = mysqli_query($con, $query1);
-        while ($data = mysqli_fetch_array($rezz)) {
-          $services = 'Earnings';
-          $numberone = $data['numberone'];
-          // $numbertwo=$data['numbertwo'];
-          ?>
-          ['<?php echo $services; ?>', <?php echo $numberone; ?>,],
-          <?php
-        }
-        ?> 
-
-      <?php
-      $query10 = "SELECT quantity, SUM(amount) as numbert FROM equipment";
-      $res1000 = mysqli_query($con, $query10);
-      while ($data = mysqli_fetch_array($res1000)) {
-        $expenses = 'Expenses';
-        $numbert = $data['numbert'];
-
-        ?>
-          ['<?php echo $expenses; ?>', <?php echo $numbert; ?>,],
-          <?php
-      }
-      ?>
-
-
-      ]);
-
-      var options = {
-
-        width: "1050",
-        legend: { position: 'none' },
-
-        bars: 'horizontal', // Required for Material Bar Charts.
-        axes: {
-          x: {
-            0: { side: 'top', label: 'Total' } // Top x-axis.
-          }
-        },
-        bar: { groupWidth: "100%" }
-      };
-
-      var chart = new google.charts.Bar(document.getElementById('top_y_div'));
-      chart.draw(data, options);
-    };
-
-
-
-  </script>
-
-  <script>
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Designation', 'Number'],
-        <?php
-        while ($row = mysqli_fetch_array($result5)) {
-          echo "['" . $row["designation"] . "', " . $row["snumber"] . "],";
-        }
-        ?>
-      ]);
-
-      var options = {
-
-        pieHole: 0.4,
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('donutchart2022'));
-      chart.draw(data, options);
-    }
-  </script>
 </head>
 
 <body>
@@ -243,46 +83,6 @@ $result5 = mysqli_query($con, $qry);
 
         </ul>
       </div>
-      <!--End-Action boxes-->
-
-      <!--Chart-box-->
-      <div class="row-fluid">
-        <div class="widget-box">
-          <div class="widget-title bg_lg"><span class="icon"><i class="fas fa-file"></i></span>
-            <h5>Services Report</h5>
-          </div>
-          <div class="widget-content">
-            <div class="row-fluid">
-              <div class="span8">
-                <!-- <div id="piechart"></div>   -->
-                <div id="top_x_div" style="width: 700px; height: 290px;"></div>
-              </div>
-              <div class="span4">
-                <ul class="site-stats">
-                  <li class="bg_lh"><i class="fas fa-users"></i> <strong>
-                      <?php include 'dashboard-usercount.php'; ?>
-                    </strong> <small>Total Members</small></li>
-                  <li class="bg_lg"><i class="fas fa-user-clock"></i> <strong>
-                      <?php include 'actions/dashboard-staff-count.php'; ?>
-                    </strong> <small>Staff Users</small></li>
-                  <li class="bg_ls"><i class="fas fa-dumbbell"></i> <strong>
-                      <?php include 'actions/count-equipments.php'; ?>
-                    </strong> <small>Available Equipments</small></li>
-                  <li class="bg_ly"><i class="fas fa-file-invoice-dollar"></i> <strong>$
-                      <?php include 'actions/total-exp.php'; ?>
-                    </strong> <small>Total Expenses</small></li>
-                  <li class="bg_lr"><i class="fas fa-user-ninja"></i> <strong>
-                      <?php include 'actions/count-trainers.php'; ?>
-                    </strong> <small>Active Gym Trainers</small></li>
-                  <li class="bg_lb"><i class="fas fa-calendar-check"></i> <strong>
-                      <?php include 'actions/count-attendance.php'; ?>
-                    </strong> <small>Present Members</small></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="row-fluid">
         <div class="span6">
@@ -294,13 +94,10 @@ $result5 = mysqli_query($con, $qry);
             <div class="widget-content nopadding collapse in" id="collapseG2">
               <ul class="recent-posts">
                 <li>
-
                   <?php
-
                   include "dbcon.php";
                   $qry = "SELECT * FROM announcements";
                   $result = mysqli_query($conn, $qry);
-
                   while ($row = mysqli_fetch_array($result)) {
                     echo "<div class='user-thumb'> <img width='70' height='40' alt='User' src='../img/demo/av1.jpg'> </div>";
                     echo "<div class='article-post'>";
@@ -308,12 +105,9 @@ $result5 = mysqli_query($con, $qry);
                     echo "<p><a href='#'>" . $row['message'] . "</a> </p>";
 
                   }
-
                   echo "</div>";
                   echo "</li>";
                   ?>
-
-                  <a href="manage-announcement.php"><button class="btn btn-warning btn-mini">View All</button></a>
                 </li>
               </ul>
             </div>
