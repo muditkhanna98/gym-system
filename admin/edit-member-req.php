@@ -21,7 +21,6 @@ if (!isset($_SESSION['user_id'])) {
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -32,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
   </div>
   <!--close-Header-part-->
 
-  
+
   <!--top-Header-menu-->
   <?php include 'includes/topheader.php' ?>
   <!--close-top-Header-menu-->
@@ -133,14 +132,10 @@ if (!isset($_SESSION['user_id'])) {
   <!--end-main-container-part-->
 
   <!--Footer-part-->
-  
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
+
 
   <!--end-Footer-part-->
 

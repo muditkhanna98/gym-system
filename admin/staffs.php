@@ -21,7 +21,6 @@ if (!isset($_SESSION['user_id'])) {
   <link rel="stylesheet" href="../css/matrix-media.css" />
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -119,11 +118,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
   <script src="../js/jquery.min.js"></script>

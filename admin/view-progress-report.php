@@ -22,7 +22,6 @@ if (!isset($_SESSION['user_id'])) {
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -191,11 +190,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
 

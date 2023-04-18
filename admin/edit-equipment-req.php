@@ -20,7 +20,6 @@ if (!isset($_SESSION['user_id'])) {
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -41,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
   <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
 </div> -->
   <!--close-top-serch-->
-  
+
   <!--sidebar-menu-->
   <?php $page = 'update-equip';
   include 'includes/sidebar.php' ?>
@@ -132,16 +131,12 @@ if (!isset($_SESSION['user_id'])) {
   </div>
 
   <!--end-main-container-part-->
-  
+
   <!--Footer-part-->
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
 

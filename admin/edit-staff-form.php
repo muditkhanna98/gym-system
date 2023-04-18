@@ -21,7 +21,6 @@ if (!isset($_SESSION['user_id'])) {
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -32,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
   </div>
   <!--close-Header-part-->
 
-  
+
   <!--top-Header-menu-->
   <?php include 'includes/topheader.php' ?>
   <!--close-top-Header-menu-->
@@ -56,120 +55,120 @@ if (!isset($_SESSION['user_id'])) {
   while ($row = mysqli_fetch_array($result)) {
     ?>
 
-      <div id="content">
-        <div id="content-header">
-          <div id="breadcrumb"> <a href="index.php" title="Go to Home" class="tip-bottom"><i class="fas fa-home"></i>
-              Home</a> <a href="staffs.php" class="tip-bottom">Staffs</a> <a href="edit-staff-form.php" class="current">Edit
-              Staff Records</a> </div>
-          <h1 class="text-center">Update Staff's Detail <i class="fas fa-briefcase"></i></h1>
-        </div>
-        <div class="container-fluid">
-          <hr>
-          <div class="row-fluid">
-            <div class="span6">
-              <div class="widget-box">
-                <div class="widget-title"> <span class="icon"> <i class="fas fa-align-justify"></i> </span>
-                  <h5>Staff-Details</h5>
-                </div>
-                <div class="widget-content nopadding">
+    <div id="content">
+      <div id="content-header">
+        <div id="breadcrumb"> <a href="index.php" title="Go to Home" class="tip-bottom"><i class="fas fa-home"></i>
+            Home</a> <a href="staffs.php" class="tip-bottom">Staffs</a> <a href="edit-staff-form.php" class="current">Edit
+            Staff Records</a> </div>
+        <h1 class="text-center">Update Staff's Detail <i class="fas fa-briefcase"></i></h1>
+      </div>
+      <div class="container-fluid">
+        <hr>
+        <div class="row-fluid">
+          <div class="span6">
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="fas fa-align-justify"></i> </span>
+                <h5>Staff-Details</h5>
+              </div>
+              <div class="widget-content nopadding">
 
-                  <form action="edit-staff-req.php" method="POST" class="form-horizontal">
-                    <div class="control-group">
-                      <label class="control-label">Full Name :</label>
-                      <div class="controls">
-                        <input type="text" class="span11" name="fullname" value='<?php echo $row['fullname']; ?>' />
-                      </div>
+                <form action="edit-staff-req.php" method="POST" class="form-horizontal">
+                  <div class="control-group">
+                    <label class="control-label">Full Name :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" name="fullname" value='<?php echo $row['fullname']; ?>' />
                     </div>
-                    <div class="control-group">
-                      <label class="control-label">Username :</label>
-                      <div class="controls">
-                        <input type="text" class="span11" name="username" value='<?php echo $row['username']; ?>' />
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <label class="control-label">Password :</label>
-                      <div class="controls">
-                        <input type="password" class="span11" name="password" disabled="" placeholder="**********" />
-                        <span class="help-block">Note: Only the members are allowed to change their password until and
-                          unless it's an emergency.</span>
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <label class="control-label">Gender :</label>
-                      <div class="controls">
-                        <input type="text" class="span11" name="gender" value='<?php echo $row['gender']; ?>' />
-                      </div>
-                    </div>
-
-
-
-                </div>
-
-
-                <div class="widget-content nopadding">
-                  <div class="form-horizontal">
-                  
                   </div>
-                  <div class="widget-content nopadding">
-
+                  <div class="control-group">
+                    <label class="control-label">Username :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" name="username" value='<?php echo $row['username']; ?>' />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Password :</label>
+                    <div class="controls">
+                      <input type="password" class="span11" name="password" disabled="" placeholder="**********" />
+                      <span class="help-block">Note: Only the members are allowed to change their password until and
+                        unless it's an emergency.</span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Gender :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" name="gender" value='<?php echo $row['gender']; ?>' />
+                    </div>
                   </div>
 
 
-                </div>
+
               </div>
 
-            </div>
 
-            <div class="span6">
-              <div class="widget-box">
-                <div class="widget-title"> <span class="icon"> <i class="fas fa-align-justify"></i> </span>
-                  <h5>Staff-Details</h5>
+              <div class="widget-content nopadding">
+                <div class="form-horizontal">
+
                 </div>
                 <div class="widget-content nopadding">
-                  <div class="form-horizontal">
-                    <div class="control-group">
-                      <label for="normal" class="control-label">Contact Number</label>
-                      <div class="controls">
-                        <input type="number" id="mask-phone" name="contact" value='<?php echo $row['contact']; ?>'
-                          class="span8 mask text">
-                        <span class="help-block blue span8">(999) 999-9999</span>
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <label class="control-label">Address :</label>
-                      <div class="controls">
-                        <input type="text" class="span11" name="address" value='<?php echo $row['address']; ?>' />
-                      </div>
-                    </div>
-
-                    <div class="control-group">
-                      <label class="control-label">Designation</label>
-                      <div class="controls">
-                        <select name="designation" id="designation">
-                          <option value="Cashier">Cashier</option>
-                          <option value="Trainer">Trainer</option>
-                          <option value="GYM Assistant">GYM Assistant</option>
-                          <option value="Front Desk Staff">Front Desk Staff</option>
-                          <option value="Manager">Manager</option>
-                        </select>
-                      </div>
-                    </div>
-
-
-                  </div>
-
-
-                
-                  <div class="form-actions text-center">
-                    <!-- user's ID is hidden here -->
-                    <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
-                    <button type="submit" class="btn btn-success">Update Staff Details</button>
-                  </div>
-
-                  </form>
 
                 </div>
-                <?php
+
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="span6">
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="fas fa-align-justify"></i> </span>
+                <h5>Staff-Details</h5>
+              </div>
+              <div class="widget-content nopadding">
+                <div class="form-horizontal">
+                  <div class="control-group">
+                    <label for="normal" class="control-label">Contact Number</label>
+                    <div class="controls">
+                      <input type="number" id="mask-phone" name="contact" value='<?php echo $row['contact']; ?>'
+                        class="span8 mask text">
+                      <span class="help-block blue span8">(999) 999-9999</span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Address :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" name="address" value='<?php echo $row['address']; ?>' />
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label">Designation</label>
+                    <div class="controls">
+                      <select name="designation" id="designation">
+                        <option value="Cashier">Cashier</option>
+                        <option value="Trainer">Trainer</option>
+                        <option value="GYM Assistant">GYM Assistant</option>
+                        <option value="Front Desk Staff">Front Desk Staff</option>
+                        <option value="Manager">Manager</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="form-actions text-center">
+                  <!-- user's ID is hidden here -->
+                  <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
+                  <button type="submit" class="btn btn-success">Update Staff Details</button>
+                </div>
+
+                </form>
+
+              </div>
+              <?php
   }
   ?>
 
@@ -187,7 +186,7 @@ if (!isset($_SESSION['user_id'])) {
     </div>
   </div>
 
-  
+
   <!--end-main-container-part-->
 
   <!--Footer-part-->
@@ -195,11 +194,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
   <!--end-Footer-part-->
 
   <script src="../js/excanvas.min.js"></script>

@@ -29,7 +29,6 @@ $result5 = mysqli_query($con, $qry);
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>

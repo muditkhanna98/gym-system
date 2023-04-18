@@ -21,7 +21,6 @@ if (!isset($_SESSION['user_id'])) {
   <link rel="stylesheet" href="../css/matrix-media.css" />
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -51,7 +50,8 @@ if (!isset($_SESSION['user_id'])) {
   <div id="content">
     <div id="content-header">
       <div id="breadcrumb"> <a href="index.php" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-        <a href="attendance.php" class="current">Manage Attendance</a> </div>
+        <a href="attendance.php" class="current">Manage Attendance</a>
+      </div>
       <h1 class="text-center">Attendance List <i class="icon icon-calendar"></i></h1>
     </div>
     <div class="container-fluid">
@@ -177,11 +177,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
 

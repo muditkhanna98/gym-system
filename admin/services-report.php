@@ -26,7 +26,6 @@ $result = mysqli_query($con, $qry);
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -103,11 +102,7 @@ $result = mysqli_query($con, $qry);
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
 

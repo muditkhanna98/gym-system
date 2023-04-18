@@ -21,11 +21,10 @@ if (!isset($_SESSION['user_id'])) {
   <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
   <link href="../font-awesome/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/jquery.gritter.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  
+
   <!--Header-part-->
   <div id="header">
     <h1><a href="dashboard.html">Perfect Gym Admin</a></h1>
@@ -125,11 +124,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-  <style>
-    #footer {
-      color: white;
-    }
-  </style>
+
 
   <!--end-Footer-part-->
 
